@@ -31,7 +31,8 @@ namespace RestroRouting.Service.Tests.Logic
         public async Task Given_Order_To_Place_Saves_The_Order()
         {
             // Arrange
-            var placeBoothOrderCommand = new PlaceBoothOrderCommand(1, "sam", new List<MenuItemData>
+
+            var placeBoothOrderCommand = new PlaceBoothOrderCommand(1, Guid.NewGuid(), "sam", new List<MenuItemData>
             {
                 new MenuItemData(Guid.NewGuid(),1, 3.99M, Domain.MenuItemType.Fries)
             });
@@ -60,7 +61,8 @@ namespace RestroRouting.Service.Tests.Logic
             var boothId = new Guid("8454e9f0-3206-4900-8318-2e0b26ccab1f");
             var orderId = new Guid("e0c2ce94-e891-4c88-a08f-c0f20e4e1bc2");
 
-            var booth = new Booth(1, "sam");
+
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
             var menuItems = new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 1, 1.5M, MenuItemType.Desert) };
             booth.PlaceOrder(menuItems);
 
@@ -87,7 +89,8 @@ namespace RestroRouting.Service.Tests.Logic
         {
             // Arrange
             var boothId = new Guid("8454e9f0-3206-4900-8318-2e0b26ccab1f");
-            var booth = new Booth(1, "sam");
+
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
             var menuItems = new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 1, 1.5M, MenuItemType.Desert) };
             booth.PlaceOrder(menuItems);
 

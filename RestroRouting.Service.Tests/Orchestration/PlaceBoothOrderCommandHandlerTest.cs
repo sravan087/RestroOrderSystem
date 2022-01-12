@@ -32,9 +32,11 @@ namespace RestroRouting.Service.Tests.Orchestration
         public async Task Place_Booth_Order_Command_Handler_Test()
         {
             // Arrange
-            var placeBoothOrderCommand = new PlaceBoothOrderCommand(1, "Sam", new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 1, 1.5M, MenuItemType.Desert) });
+
+            var placeBoothOrderCommand = new PlaceBoothOrderCommand(1, Guid.NewGuid(), "Sam", new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 1, 1.5M, MenuItemType.Desert) });
         
-            var booth = new Booth(1, "sam");
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
+
             var menuItems = new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 1, 1.5M, MenuItemType.Desert) };
             booth.PlaceOrder(menuItems);
             _mockBoothService.Setup(x => x.PlaceOrder(placeBoothOrderCommand)).ReturnsAsync(booth);

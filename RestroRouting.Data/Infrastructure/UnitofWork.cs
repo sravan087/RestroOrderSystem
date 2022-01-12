@@ -14,7 +14,7 @@ namespace RestroRouting.Data.Infrastructure
         }
         public async Task<bool> CommitAsync(CancellationToken cancellationToken)
         {
-            var result = await _restoRoutingContext.SaveChangesAsync(cancellationToken);
+            var result = await _restroRoutingContext.SaveChangesAsync(cancellationToken);
             return result != 0;
         }
     }

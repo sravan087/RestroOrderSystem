@@ -18,7 +18,8 @@ namespace RestroRouting.Domain.Tests.Entities
             // Arrange
 
             // Act
-            var booth = new Booth(1, "sam");
+
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
 
             // Assert
             booth.BoothId.Should().NotBeEmpty();
@@ -33,7 +34,8 @@ namespace RestroRouting.Domain.Tests.Entities
             // Arrange
             // Act
             var menuItems = new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 1, 1.5M, MenuItemType.Desert) };           
-            var booth = new Booth(1, "sam");
+
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
             var result = booth.PlaceOrder(menuItems);
 
             // Assert
@@ -46,7 +48,8 @@ namespace RestroRouting.Domain.Tests.Entities
             // Arrange
             // Act
             var menuItems = new List<MenuItemData> {  };          
-            var booth = new Booth(1, "sam");
+
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
 
 
             // Assert
@@ -58,7 +61,8 @@ namespace RestroRouting.Domain.Tests.Entities
         {
             // Arrange 
             // Act
-            var booth = new Booth(1, "sam");
+
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
             var menuItems = new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 1, 1.5M, MenuItemType.Desert) };
             var orderId = booth.PlaceOrder(menuItems);
 
@@ -77,7 +81,8 @@ namespace RestroRouting.Domain.Tests.Entities
         {
             // Arrange 
             // Act
-            var booth = new Booth(1, "sam");
+
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
             var menuItems = new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 2, 1.5M, MenuItemType.Desert) };
             var orderId = booth.PlaceOrder(menuItems);
 
@@ -91,7 +96,8 @@ namespace RestroRouting.Domain.Tests.Entities
         {
             // Arrange 
             // Act
-            var booth = new Booth(1, "sam");
+
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
             var menuItems = new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 2, 1.5M, MenuItemType.Desert) };
             var orderId = booth.PlaceOrder(menuItems);
 
@@ -105,7 +111,8 @@ namespace RestroRouting.Domain.Tests.Entities
         {
             // Arrange 
             // Act
-            var booth = new Booth(1, "sam");
+
+            var booth = new Booth(1, Guid.NewGuid(), "sam");
             var menuItems = new List<MenuItemData> { new MenuItemData(Guid.NewGuid(), 2, 1.5M, MenuItemType.Desert) };
             booth.PlaceOrder(menuItems);
 

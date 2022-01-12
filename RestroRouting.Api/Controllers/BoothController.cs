@@ -21,6 +21,12 @@ namespace RestroRoutingApi.Controllers
             _mediator = mediator;
         }
 
+
+        public async Task<IActionResult> Get()
+        {
+            return Ok(new { Hello = "Hello" });
+        }
+
         [HttpPost("placeorder")]
         public async Task<IActionResult> PlaceOrder([FromBody] PlaceBoothOrderCommand placeBoothOrderCommand, CancellationToken cancellationToken)
         {
